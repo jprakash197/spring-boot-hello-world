@@ -8,22 +8,22 @@ node{
         sayHello 'Jyoti'
     }
     stage('sonar_code_quality_check'){
-       // mvnHome=tool 'M3'
-        //sonarCheck "$mvnHome",'jpsonar'
+        mvnHome=tool 'M3'
+        sonarCheck "$mvnHome",'jpsonar'
     }
     stage('maven_build'){
-       // mavenBuild "$mvnHome"
+        mavenBuild "$mvnHome"
     }
     stage('artifactory_upload'){
-       // jfrogUpload 'jpart','*.jar','project_repo'
+        jfrogUpload 'jpart','*.jar','project_repo'
     }
     
     stage('docker_image_build'){
-  //        dockerImageBuild 'jyoti_img'
+          dockerImageBuild 'jyoti_img'
     }
     
     stage('dockerhub_upload'){
-   //       dockerUpload "$userNameDocker","$passwordDocker",'jyoti_img'
+          dockerUpload "$userNameDocker","$passwordDocker",'jyoti_img'
     }
     stage('image_run'){
       //  sh 'sudo docker rm -f jyoti_cntnr1 jyoti_cntnr2'
