@@ -27,7 +27,7 @@ node{
     }
     stage('image_run'){
         sh 'sudo docker rm -f jyoti_cntnr'
-        sh 'sudo docker run -d -p 8086:8080 --n`ame jyoti_cntnr jyoti_img' 
+        sh 'sudo docker run -d -p 8086:8080 --name jyoti_cntnr jyoti_img' 
     }
     }catch(caughtError){
             currentBuild.result = "FAILURE"
