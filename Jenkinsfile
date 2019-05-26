@@ -26,7 +26,7 @@ node{
    //       dockerUpload "$userNameDocker","$passwordDocker",'jyoti_img'
     }
     stage('image_run'){
-        sh 'sudo docker rm -f jyoti_cntnr1 jyoti_cntnr2'
+      //  sh 'sudo docker rm -f jyoti_cntnr1 jyoti_cntnr2'
         sh 'sudo docker run -d -p 8086:8080 --name jyoti_cntnr1 jyoti_img'
         sh 'sudo docker run -d -p 8087:8080 --name jyoti_cntnr2 jyoti_img'
     }
